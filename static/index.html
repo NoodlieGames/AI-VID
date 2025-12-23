@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PixVerse Video Generator</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>🎥 AI Video Generator</h1>
+
+    <form method="POST">
+        <textarea name="prompt" placeholder="Describe your video..." required></textarea>
+        <button type="submit">Generate</button>
+    </form>
+
+    {% if video_url %}
+        <h2>Result:</h2>
+        <video src="{{ video_url }}" controls></video>
+        <a href="{{ video_url }}" download>Download</a>
+    {% endif %}
+</div>
+
+</body>
+</html>
